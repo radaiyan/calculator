@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="calculator.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <title>Calculator</title>
+</head>
+<body>
+  <div class="calculator">
+    <table>
+      <tr><input type="text" id="result" value=""></tr>
+
+      <tr><td><input type="button" id="calculator" onclick="calculator('1')" value="1"></td>
+          <td><input type="button" id="calculator" onclick="calculator('2')" value="2"></td>
+          <td><input type="button" id="calculator" onclick="calculator('3')" value="3"></td>
+          <td><input type="button" id="calculator" onclick="calculator('+')" value="+"></td>
+
+      </tr>
+      <tr>
+          <td><input type="button" id="calculator" onclick="calculator('4')" value="4"></td>
+          <td><input type="button" id="calculator" onclick="calculator('5')" value="5"></td>
+          <td><input type="button" id="calculator" onclick="calculator('6')" value="6"></td>
+          <td><input type="button" id="calculator" onclick="calculator('-')" value="-"></td>
+      </tr>
+      <tr>
+          <td><input type="button" id="calculator" onclick="calculator('7')" value="7"></td>
+          <td><input type="button" id="calculator" onclick="calculator('8')" value="8"></td>
+          <td><input type="button" id="calculator" onclick="calculator('9')" value="9"></td>
+          <td><input type="button" id="calculator" onclick="calculator('*')" value="*"></td>
+
+
+
+      </tr>
+          <td><input type="button" id="equal" onclick="equal()" value="="></td>
+          <td><input type="button" id="calculator" onclick="calculator('0')" value="0"></td>
+          <td><input type="button" id="clear" onclick="removeValue()" value="C"></td>
+          <td><input type="button" id="calculator" onclick="calculator('/')" value="/"></td>
+      </tr>
+
+    </table>
+
+    <script>
+
+      function calculator(NewValue){
+        let result = document.getElementById("result");
+        result.value += NewValue;
+      }
+
+      function removeValue(){
+        let result = document.getElementById("result").value = null;
+      }
+
+      function equal(){
+        let a = document.getElementById("result").value;
+        let b = eval(a);
+        document.getElementById("result").value = b;
+      }
+
+    </script>
+  </div>
+</body>
+</html>
